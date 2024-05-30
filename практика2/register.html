@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Логотип">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="search.html">Поиск</a></li>
+                <li><a href="register.html">Регистрация</a></li>
+                <li><a href="login.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!--  -->
+<body>
+    <div class="container">
+        <h2>Регистрационная форма</h2>
+        <form id="registration-form">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" class="test-2-name" required>
+            <label for="lastname">Фамилия:</label>
+            <input type="text" id="lastname" name="lastname" class="test-2-last" required>
+            <label for="doc">Номер документа:</label>
+            <input type="text" id="doc" name="doc" class="test-2-doc" required>
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone" class="test-2-phone" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" class="test-2-pass" pattern="^(?=.*[0-9])(?=.*[!*$])[a-zA-Z0-9!*$]{7,}$" title="Пароль должен содержать не менее 7 символов, цифры и символы !, *, $." required>
+            <label for="password2">Повторите пароль:</label>
+            <input type="password" id="password2" name="password2" class="test-2-pass2" required>
+            <input type="submit" value="Зарегистрироваться" class="test-2-btn">
+        </form>
+    </div>
+<!--  -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="img/logo.svg" alt="Логотип" class="logo">
+            </div>
+            <div class="footer-center">
+                <p class="phone-number">телефон: <span class="test-0-phone">8 (800) 100-10-10</span></p>
+                <p class="developer-name">Бородин Александр Евгеньевич</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <img src="img/twitter-3-svgrepo-com.svg" alt="Twitter">
+                </a>
+                <a href="https://t.me" target="_blank" class="social-icon">
+                    <img src="img/telegram-svgrepo-com.svg" alt="Telegram">
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-icon">
+                    <img src="img/youtube-svgrepo-com.svg" alt="YouTube">
+                </a>
+            </div>
+        </div>
+    </footer>
+            <script src="script.js"></script>
+            <script>
+                document.getElementById('registration-form').addEventListener('submit', function(event) {
+                    var password = document.getElementById('password').value;
+                    var password2 = document.getElementById('password2').value;
+            
+                    if (password !== password2) {
+                        alert('Пароли не совпадают');
+                        event.preventDefault();
+                    } else {
+                        console.log('Имя: ' + document.getElementById('name').value);
+                        console.log('Фамилия: ' + document.getElementById('lastname').value);
+                        console.log('Номер документа: ' + document.getElementById('doc').value);
+                        console.log('Телефон: ' + document.getElementById('phone').value);
+                        console.log('Пароль: ' + password);
+                        // Можно добавить отправку данных на сервер или другую логику обработки формы
+                    }
+                });
+            </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        /* Стили для формы */
+        .login-form-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-form {
+            max-width: 400px; /* увеличиваем ширину блока */
+            margin: 0 auto;
+            padding: 30px; /* увеличиваем отступы */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        /* Стили для текстовых полей */
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 15px; /* увеличиваем отступы */
+            margin: 10px 0 20px 0; /* увеличиваем отступы */
+            border: 1px solid #ccc;
+            border-radius: 5px; /* увеличиваем радиус скругления углов */
+            box-sizing: border-box;
+        }
+        /* Стили для кнопки */
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 15px; /* увеличиваем отступы */
+            border: none;
+            border-radius: 5px; /* увеличиваем радиус скругления углов */
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .login-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Логотип">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="search.html">Поиск</a></li>
+                <li><a href="register.html">Регистрация</a></li>
+                <li><a href="login.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="login-form-container">
+        <div class="login-form">
+            <h2>Логин</h2>
+            <form action="#" method="post" onsubmit="return validateForm()">
+                <input type="text" name="phone" class="test-1-fpn" placeholder="Phone" required>
+                <input type="password" name="password" class="test-1-fps" placeholder="Password" required>
+                <input type="submit" value="Login" class="test-1-fbs">
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function validateForm() {
+            var phone = document.querySelector('.test-1-fpn').value;
+            var password = document.querySelector('.test-1-fps').value;
+    
+            // Проверка на соответствие телефона и пароля
+            if (phone === '89991234567' && password === 'password12') {
+                alert('Вы вошли!');
+                return true; // отправляем форму
+            } else {
+                alert('Неверный телефон или пароль!');
+                return false; // отменяем отправку формы
+            }
+        }
+    </script>
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="img/logo.svg" alt="Логотип" class="logo">
+            </div>
+            <div class="footer-center">
+                <p class="phone-number">телефон: <span class="test-0-phone">8 (800) 100-10-10</span></p>
+                <p class="developer-name">Бородин Александр Евгеньевич</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <img src="img/twitter-3-svgrepo-com.svg" alt="Twitter">
+                </a>
+                <a href="https://t.me" target="_blank" class="social-icon">
+                    <img src="img/telegram-svgrepo-com.svg" alt="Telegram">
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-icon">
+                    <img src="img/youtube-svgrepo-com.svg" alt="YouTube">
+                </a>
+            </div>
+        </div>
+    </footer>
+            <script src="script.js"></script>
+</body>
+</html>
